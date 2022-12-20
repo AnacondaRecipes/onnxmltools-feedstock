@@ -16,12 +16,14 @@ source:
 build:
   number: 0
   skip: true  # [py<37]
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
     - python
+    - setuptools
+    - wheel
   run:
     - python
     - numpy 
