@@ -56,6 +56,7 @@ about:
       - Pytorch has its builtin ONNX exporter.
   license: Apache-2.0
   license_file: LICENSE
+  license_family: Apache
   dev_url: https://github.com/onnx/onnxmltools
   doc_url: https://github.com/onnx/onnxmltools#readme
 
