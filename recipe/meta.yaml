@@ -21,9 +21,9 @@ requirements:
     - wheel
   run:
     - python
-    - numpy 
-    - onnx 
-    - skl2onnx 
+    - numpy
+    - onnx
+    - skl2onnx
 
 test:
   imports:
