@@ -23,7 +23,6 @@ requirements:
     - python
     - numpy
     - onnx
-    - packaging
 
 test:
   imports:
@@ -32,6 +31,8 @@ test:
     - pip check
   requires:
     - pip
+    - packaging
+    - onnxconverter-common
 
 about:
   home: https://learn.microsoft.com/en-us/windows/ai/windows-ml/onnxmltools
