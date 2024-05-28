@@ -23,7 +23,6 @@ requirements:
     - python
     - numpy
     - onnx
-    - skl2onnx
 
 test:
   imports:
