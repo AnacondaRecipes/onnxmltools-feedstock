@@ -1,5 +1,5 @@
 {% set name = "onnxmltools" %}
-{% set version = "1.12.0" %}
+{% set version = "1.16.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,27 @@ package:
 
 source:
   - url: https://github.com/onnx/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 740852771744323dcd3fa60064dbc54dd0ee807c58384b06940497ffbf67caf8
+    sha256: abd9e957ef97a85aa4920bee2d6f2ad46cd42e067a9971469190650641404765
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  skip: true  # [py<39]
 
 requirements:
   host:
     - pip
     - python
-    - setuptools
+    - setuptools >=61
     - wheel
   run:
     - python
     - numpy
-    - onnx
+    - onnx >=1.8.1
     - packaging
     - onnxconverter-common
+    - protobuf
+    - skl2onnx >=1.4.9
 
 test:
   imports:
@@ -40,16 +43,16 @@ about:
   description: |
     ONNXMLTools enables you to convert models from different machine learning toolkits into ONNX. Currently the following toolkits are supported:
 
-      - Tensorflow (a wrapper of tf2onnx converter)
-      - scikit-learn (a wrapper of skl2onnx converter)
-      - Apple Core ML
-      - Spark ML (experimental)
-      - LightGBM
-      - libsvm
-      - XGBoost
-      - H2O
-      - CatBoost
-      - Pytorch has its builtin ONNX exporter.
+    - Tensorflow (a wrapper of tf2onnx converter)
+    - scikit-learn (a wrapper of skl2onnx converter)
+    - Apple Core ML
+    - Spark ML (experimental)
+    - LightGBM
+    - libsvm
+    - XGBoost
+    - H2O
+    - CatBoost
+    - Pytorch has its builtin ONNX exporter.
   license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
