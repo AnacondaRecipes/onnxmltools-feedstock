@@ -11,8 +11,6 @@ source:
 
 build:
   number: 0
-  # skl2onnx (upstream hard dep) is not yet built for py3.14 on pkgs/main
-  skip: true  # [py>313]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
